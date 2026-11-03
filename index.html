@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+  <meta name="theme-color" content="#101b1a">
+  <title>WILD ISLAND: SURVIVAL</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="game-container"></div>
+  <div id="loading-screen"><div class="brand">WILD ISLAND</div><div>SURVIVAL</div><div class="loader"></div><small>ADA YÜKLENİYOR...</small></div>
+
+  <div id="hud" class="hidden">
+    <section class="stats-panel">
+      <div class="stat"><span>♥ SAĞLIK</span><b id="health-val">100</b><div class="bar"><i id="health-fill" class="health"></i></div></div>
+      <div class="stat"><span>🍌 AÇLIK</span><b id="food-val">100</b><div class="bar"><i id="food-fill" class="food"></i></div></div>
+      <div class="stat"><span>💧 SUSUZLUK</span><b id="water-val">100</b><div class="bar"><i id="water-fill" class="water"></i></div></div>
+      <div class="stat"><span>⚡ ENERJİ</span><b id="energy-val">100</b><div class="bar"><i id="energy-fill" class="energy"></i></div></div>
+    </section>
+    <div class="top-actions">
+      <button data-modal="map-modal">🗺</button><button data-modal="inventory-modal">🎒</button>
+      <button data-modal="craft-modal">🔨</button><button id="pause-button">Ⅱ</button>
+    </div>
+    <div id="hint">Yakındaki kaynakları toplamak için TOPLA düğmesine bas.</div>
+    <div id="joystick-base"><div id="joystick-stick"></div></div>
+    <div id="camera-zone"></div>
+    <div class="action-buttons">
+      <button id="jump-button">ZIPLA</button>
+      <button id="run-button">KOŞ</button>
+      <button id="collect-button" class="primary">TOPLA</button>
+    </div>
+  </div>
+
+  <div id="main-menu" class="screen">
+    <div class="menu-card">
+      <div class="eyebrow">SURVIVE · EXPLORE · BUILD</div>
+      <h1>WILD ISLAND</h1><h2>SURVIVAL</h2>
+      <p>Issız bir adada hayatta kal. Keşfet, kaynak topla ve barınağını kur.</p>
+      <button id="new-game" class="wide primary">YENİ OYUN</button>
+      <button id="continue-game" class="wide">DEVAM ET</button>
+      <button id="settings-button" class="wide">AYARLAR</button>
+      <small>Mobil 3D hayatta kalma prototipi</small>
+    </div>
+  </div>
+
+  <div id="inventory-modal" class="modal hidden">
+    <div class="modal-card"><header><h3>ENVANTER</h3><button class="close">✕</button></header><div id="inventory-list" class="item-grid"></div></div>
+  </div>
+  <div id="craft-modal" class="modal hidden">
+    <div class="modal-card"><header><h3>ÜRETİM</h3><button class="close">✕</button></header><div id="craft-list" class="recipe-list"></div></div>
+  </div>
+  <div id="map-modal" class="modal hidden">
+    <div class="modal-card"><header><h3>ADA HARİTASI</h3><button class="close">✕</button></header><div class="map-info">Keşfedilen bölge: <b id="explored">Sahil</b><p>Bu prototipte harita keşfi temel seviyededir.</p></div></div>
+  </div>
+  <div id="settings-modal" class="modal hidden">
+    <div class="modal-card"><header><h3>AYARLAR</h3><button class="close">✕</button></header>
+      <label>Grafik kalitesi <select id="quality"><option value="low">Düşük</option><option value="medium" selected>Orta</option><option value="high">Yüksek</option></select></label>
+      <label>Kamera hassasiyeti <input id="sensitivity" type="range" min="0.5" max="2" step="0.1" value="1"></label>
+      <button id="save-settings" class="wide primary">KAYDET</button>
+    </div>
+  </div>
+  <div id="pause-modal" class="modal hidden">
+    <div class="modal-card"><header><h3>OYUN DURAKLATILDI</h3><button class="close">✕</button></header><button id="resume-button" class="wide primary">DEVAM ET</button><button id="save-button" class="wide">KAYDET</button><button id="menu-button" class="wide">ANA MENÜ</button></div>
+  </div>
+  <div id="toast" aria-live="polite"></div>
+
+  <script src="js/three.min.js"></script>
+  <script src="js/game.js"></script>
+</body>
+</html>

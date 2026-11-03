@@ -1,0 +1,21 @@
+{
+  "name": "wild-island-survival",
+  "version": "1.1.0",
+  "private": true,
+  "description": "WILD ISLAND: SURVIVAL - Three.js mobile survival prototype",
+  "scripts": {
+    "build": "node scripts/build.js",
+    "android:init": "npx cap add android",
+    "android:sync": "npm run build && npx cap sync android",
+    "android:open": "npx cap open android",
+    "android:debug": "npm run build && npx cap sync android && cd android && gradlew.bat assembleDebug"
+  },
+  "dependencies": {
+    "@capacitor/android": "^6.1.2",
+    "@capacitor/core": "^6.1.2",
+    "three": "0.160.0"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^6.1.2"
+  }
+}
